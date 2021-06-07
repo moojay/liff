@@ -63,6 +63,13 @@
     }
 
     async function getFriendship() {
+      const friend = await liff.getFriendship()
+      document.getElementById("friendship").append(friend.friendFlag)
+      if(!friend.friendFlag) {
+        if (confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อน จะเพิ่มเลยไหม ?")) {
+          windows.location = "https://line.me/R/ti/p/@178yfyoa"
+        }
+      }
     }
 
     async function sendMsg() {
@@ -71,8 +78,8 @@
           await liff.sendMessages([
             {
               "type" : "sticker",
-              "stickerId" : 5,
-              "packageId" : 5
+              "stickerId" : 1,
+              "packageId" : 1
             }
           ])
           alert("Message sent")
@@ -119,7 +126,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
