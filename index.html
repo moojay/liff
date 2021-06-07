@@ -50,7 +50,8 @@
 
       liff.permanentLink.setExtraQueryParam('param=9')
       const link2 = liff.permanentLink.createUrl()
-    }document.getElementById("universalLink2").append(link2)
+      document.getElementById("universalLink2").append(link2)
+    }
 
     async function shareMsg() {
       await liff.shareTargetPicker([
@@ -149,7 +150,7 @@
       getUserProfile()
       getContext()
       getFriendship()
-      //createUniversalLink()
+      createUniversalLink()
 
       }else {
         liff.login()
